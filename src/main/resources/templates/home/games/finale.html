@@ -1,0 +1,30 @@
+
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html lang="es">
+<head th:replace="fragments/head"></head>
+<body>
+
+    <!-- Nav -->
+    <nav th:replace="fragments/nav"></nav>
+
+    <!-- Breadcrumb -->
+    <div th:replace="fragments/breadcrumb"></div>
+
+    <h2>Finale</h2>
+
+    <p>If you already completed the games, congrats!</p>
+    <p>Now collect you prize if you remember our anniversary</p>
+    <p>(if you don't, then gg well played)</p>
+
+    <form action="/home/games/finale" method="post">
+        <p>
+            <label for="date"></label><input type="date" name="date" id="date" required="required"/>
+        </p>
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+
+</body>
+</html>

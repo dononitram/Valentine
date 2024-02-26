@@ -1,0 +1,47 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html lang="en">
+<head th:replace="fragments/head"></head>
+<body>
+
+<!-- Nav -->
+<nav th:replace="fragments/nav"></nav>
+
+<!-- Breadcrumb -->
+<div th:replace="fragments/breadcrumb"></div>
+
+<h3>
+    <img th:src="@{/imgs/png/heart.png}" style="width: 50px; height: auto;">
+    Happy Valentine's!
+</h3>
+<p>For: Candelita</p>
+<p>From: Donato</p>
+<p>With love from not that far away <3</p>
+
+<h3>
+    <img th:src="@{/imgs/png/heart.png}" style="width: 50px; height: auto;">
+    Ready for a Quest?
+</h3>
+
+
+<div class="riddle main-content">
+    <p><strong>Riddle me this</strong></p>
+    <p>Within me, you'll find a better yourself.</p>
+    <p>A monthly subscription is good for your health.</p>
+    <p>I feed off your habits, your sweat, and your time.</p>
+    <p>Skipping a leg day is always a crime.</p>
+    <p></p>
+</div>
+
+<form class="form-inline bg-dark text-light p-3 mt-aut bottom-anchor" action="/home/riddle">
+    <div class="form-group">
+        <label for="riddleAnswer" class="mr-3">What Am I?</label>
+        <input type="password" name="riddleAnswer" id="riddleAnswer" class="form-control mr-3" aria-describedby="passwordHelpInline">
+        <small id="passwordHelpInline" class="text-muted">
+            3 Letter word
+        </small>
+    </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* Donato A. Martín Salán 288787 */
+
+/* Estilo para el crucigrama matemático */
+
+body {
+    min-height: 150vh;
+}
+
+/* E: 001 */
+main {
+    width: 50%;
+    margin: 1em;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+}
+
+/* E: 002 */
+main p {
+    border: 2px solid #ccc6c9;
+    text-align: center;
+    line-height: 300%;
+    margin: 0;
+}
+
+/* E: 012 */
+main p[data-state="blocked"] {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+/* E: 012 */
+main p[data-state="other"] {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+/* E: 012 */
+main p[data-state="wall"] {
+    color:#fff;
+    background-color:#571b4d;
+}
+
+/* E: 012 */
+main p[data-state="clicked"] {
+    border-color: red;
+}
+
+/* E: 011 */
+section[data-type=botonera] {
+    display: flex;
+    gap: 0.2em;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    visibility: visible;
+    margin-left: 1em;
+}
+
+/* E: 012 */
+section[data-type=botonera] div button {
+    background-color: #A91B60;
+    color: #FFF;
+}
+
+/* E: 022 */
+section[data-type=botonera] div button[data-type=operator] {
+    background-color: #571b4d;
+    color: #ffffff;
+}
+
+/* Tablet and smartphones */
+@media screen and (max-width: 799px) {
+
+    /* E: 001 */
+    main {
+        justify-content: center;
+        margin-left: 0.5em;
+        width: 95%;
+    }
+
+    /* E: 011 */
+    section[data-type=botonera] {
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+    }
+
+}

@@ -1,0 +1,79 @@
+
+/* E: 001 */
+article {
+    width: 10em;
+    height: 10em;
+    margin: 5px;
+    transform: scale(1);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+/* E: 002 */
+article > h3,
+article > img {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    backface-visibility: hidden;
+}
+
+/* E: 002 */
+article h3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #571b4d;
+    color: #ffffff;
+}
+
+/* E: 002 */
+article > img {
+    transform: rotateY(180deg);
+    background: #ffffff;
+    color: #000;
+}
+
+/* E: 011 */
+article[data-state="flip"] {
+    transform: rotateY(180deg);
+}
+
+/* E: 011 */
+article[data-state="revealed"] {
+    transform: rotateY(180deg);
+}
+
+/* E: 011 */
+section:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    flex: 0 0 20%;
+    margin-bottom: 20px;
+}
+
+/* E: 001 - Tablet */
+@media screen and (min-width: 800px) {
+    /* E: 011 */
+    section:last-child {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+        width: 50%;
+        flex: 0 0 20%;
+        margin-bottom: 20px;
+    }
+}
+
+/* E: 012 */
+section:last-child h3 {
+    width: 100%;
+}

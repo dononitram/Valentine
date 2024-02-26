@@ -1,0 +1,45 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html lang="es">
+
+<head th:replace="fragments/head"></head>
+
+<body>
+
+<!-- Nav -->
+<nav th:replace="fragments/nav"></nav>
+
+<!-- Breadcrumb -->
+<div th:replace="fragments/breadcrumb"></div>
+
+<!-- Game -->
+<h2>Memory</h2>
+
+<section>
+
+    <!-- Scripts -->
+    <script th:src="@{/js/memory.js}"></script>
+
+    <!-- Main Game -->
+    <script>
+        let cards = [
+            {element: "GATO", source: "https://th.bing.com/th/id/R.b7f2dbee2943016f0bbfc99dfac63f6c?rik=ag2wIS6AnsDhBw&pid=ImgRaw&r=0"},
+            {element: "GYM", source: "https://st.depositphotos.com/1074452/4882/i/950/depositphotos_48826573-stock-photo-fitness-weights-means-valentine-day.jpg"},
+            {element: "MINECRAFT", source: "https://th.bing.com/th/id/OIP.1NTTfVupUayXFDB1i27oWQHaIi?w=165&h=191&c=7&r=0&o=5&pid=1.7"},
+            {element: "BABY", source: "https://th.bing.com/th/id/OIP.j9p2oy3sdprz0Y8mCEkaJAHaJM?rs=1&pid=ImgDetMain"},
+            {element: "NOEL", source: "https://i1.sndcdn.com/artworks-Xs0CKfeNjIzvNenn-R16QxQ-t500x500.jpg"},
+            {element: "PARK", source: "https://th.bing.com/th/id/OIP.ioZvcG0fi1MAQCA9bINXcQAAAA?rs=1&pid=ImgDetMain"}
+        ];
+
+        m = new Memory(cards);
+    </script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" th:href="@{/css/memory.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</section>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!-- Breadcrumb -->
+<div th:fragment="breadcrumb">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" id="breadcrumb-list">
+
+        </ol>
+    </nav>
+</div>
+
+<!-- Add your JavaScript and jQuery links here -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Get the current URL path
+        const path = window.location.pathname;
+
+        // Update breadcrumb dynamically
+        updateBreadcrumb(path);
+
+        // Iterate over each navigation link and add the 'active' class if the href matches the current URL
+        $('.navbar-nav a').each(function() {
+            const href = $(this).attr('href');
+            if (path === href) {
+                $(this).addClass('active');
+            }
+        });
+
+        // Function to update breadcrumb
+        function updateBreadcrumb(path) {
+            const breadcrumbList = $('#breadcrumb-list');
+            breadcrumbList.empty(); // Clear existing breadcrumb
+
+            // Split the path into segments
+            const segments = path.split('/').filter(function (segment) {
+                return segment !== ''; // Remove empty segments
+            });
+
+            // Build breadcrumb items dynamically
+            let fullPath = '';
+            segments.forEach(function(segment, index) {
+                fullPath += '/' + segment;
+                segment = capitalizeString(segment);
+                const listItem = $('<li class="breadcrumb-item"></li>');
+                if (index === segments.length - 1) {
+                    listItem.text(segment); // Last segment without link
+                } else {
+                    const link = $('<a href="' + fullPath + '">' + segment + '</a>');
+                    listItem.append(link);
+                }
+                breadcrumbList.append(listItem);
+            });
+        }
+
+        function capitalizeString(str) {
+            return str.replace(/^(.{1})/, function(match, p1) {
+                return p1.toUpperCase();
+            });
+        }
+    });
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html lang="es">
+<head th:replace="fragments/head"></head>
+<body>
+
+    <!-- Nav -->
+    <nav th:replace="fragments/nav"></nav>
+
+    <!-- Breadcrumb -->
+    <div th:replace="fragments/breadcrumb"></div>
+
+    <h2>Crossword</h2>
+
+    <!-- Scripts -->
+    <script th:src="@{/js/crossword.js}"></script>
+
+    <script>
+        // facil
+        let crossword = new Crossword("4,*,.,=,12,#,#,#,5,#,#,*,#,/,#,#,#,*,4,-,.,=,.,#,15,#,.,*,#,=,#,=,#,/,#,=,.,#,3,#,4,*,.,=,20,=,#,#,#,#,#,=,#,#,8,#,9,-,.,=,3,#,.,#,#,-,#,+,#,#,#,*,6,/,.,=,.,#,#,#,.,#,#,=,#,=,#,#,#,=,#,#,6,#,8,*,.,=,16");
+
+        // medio
+        //let crucigrama = new Crossword("12,*,.,=,36,#,#,#,15,#,#,*,#,/,#,#,#,*,.,-,.,=,.,#,55,#,.,*,#,=,#,=,#,/,#,=,.,#,15,#,9,*,.,=,45,=,#,#,#,#,#,=,#,#,72,#,20,-,.,=,11,#,.,#,#,-,#,+,#,#,#,*,56,/,.,=,.,#,#,#,.,#,#,=,#,=,#,#,#,=,#,#,12,#,16,*,.,=,32");
+
+        // dificil
+        //let crucigrama = new Crossword("4,.,.,=,36,#,#,#,25,#,#,*,#,.,#,#,#,.,.,-,.,=,.,#,15,#,.,*,#,=,#,=,#,.,#,=,.,#,18,#,6,*,.,=,30,=,#,#,#,#,#,=,#,#,56,#,9,-,.,=,3,#,.,#,#,*,#,+,#,#,#,*,20,.,.,=,18,#,#,#,.,#,#,=,#,=,#,#,#,=,#,#,18,#,24,.,.,=,72");
+
+    </script>
+
+    <section data-type="botonera">
+        <div>
+            <button onclick="crossword.introduceElement(1)">1</button>
+            <button onclick="crossword.introduceElement(2)">2</button>
+            <button onclick="crossword.introduceElement(3)">3</button>
+            <button onclick="crossword.introduceElement(4)">4</button>
+            <button onclick="crossword.introduceElement(5)">5</button>
+            <button onclick="crossword.introduceElement(6)">6</button>
+            <button onclick="crossword.introduceElement(7)">7</button>
+            <button onclick="crossword.introduceElement(8)">8</button>
+            <button onclick="crossword.introduceElement(9)">9</button>
+        </div>
+        <div>
+            <button onclick="crossword.introduceElement('*')" data-type="operator">*</button>
+            <button onclick="crossword.introduceElement('+')" data-type="operator">+</button>
+            <button onclick="crossword.introduceElement('-')" data-type="operator">-</button>
+            <button onclick="crossword.introduceElement('/')" data-type="operator">/</button>
+            <button onclick="crossword.introduceElement('d')" data-type="operator">Del</button>
+        </div>
+    </section>
+
+    <main>
+    </main>
+
+    <script>
+        crossword.begin();
+    </script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" th:href="@{/css/crossword.css}">
+
+</body>
+</html>

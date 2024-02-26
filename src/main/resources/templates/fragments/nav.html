@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/home">
+        <h1>
+            Valentine 2024
+            <img th:src="@{/imgs/png/heart.png}" style="width: 50px; height: auto;">
+        </h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/home/games" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Games
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="/home/games/memory">Memory</a>
+                    <a class="dropdown-item" href="/home/games/crossword">Crossword</a>
+                    <a class="dropdown-item" href="/home/games/finale">Finale</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Add your JavaScript and jQuery links here -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Get the current URL path
+        var path = window.location.pathname;
+
+        // Iterate over each navigation link and add the 'active' class if the href matches the current URL
+        $('.navbar-nav a').each(function() {
+            var href = $(this).attr('href');
+            if (path === href) {
+                $(this).addClass('active');
+            }
+        });
+    });
+</script>

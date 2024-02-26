@@ -1,0 +1,30 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html lang="en">
+<head th:replace="fragments/head"></head>
+<body>
+
+<!-- Nav -->
+<nav th:replace="fragments/nav"></nav>
+
+<!-- Breadcrumb -->
+<div th:replace="fragments/breadcrumb"></div>
+
+<h2>Start the Quest 🪙</h2>
+
+<!--/*@thymesVar id="riddleAnswer" type="java.lang.String"*/-->
+
+<div th:if="${riddleAnswer.equalsIgnoreCase('gym')}">
+    <p>You know it miamor! Now let's start :)</p>
+    <a href="/home/quest">
+        <img class="d-block w-100" th:src="@{/imgs/png/quest.png}" alt="Start quest img link">
+    </a>
+</div>
+
+<div th:if="${!riddleAnswer.equalsIgnoreCase('gym')}">
+    <p>Don't be a burra miamor, it is not <strong th:text="${riddleAnswer}"></strong>!!!</p>
+    <p><a href="/home/quest">Try again</a></p>
+</div>
+
+</body>
+</html>

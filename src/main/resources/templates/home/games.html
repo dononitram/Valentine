@@ -1,0 +1,49 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html lang="es">
+<head th:replace="fragments/head"></head>
+<body>
+
+<!-- Nav -->
+<nav th:replace="fragments/nav"></nav>
+
+<!-- Breadcrumb -->
+<div th:replace="fragments/breadcrumb"></div>
+
+<h2>Games</h2>
+
+<!-- Game Carrousel -->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a href="/home/games/memory">
+                <img class="d-block w-100" th:src="@{/imgs/png/memory.png}" alt="First slide">
+            </a>
+        </div>
+        <div class="carousel-item">
+            <a href="/home/games/crossword">
+                <img class="d-block w-100" th:src="@{/imgs/png/crossword.png}" alt="Second slide">
+            </a>
+        </div>
+        <div class="carousel-item">
+            <a href="/home/games/finale">
+                <img class="d-block w-100" th:src="@{/imgs/png/finale.png}" alt="Third slide">
+            </a>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+</body>
